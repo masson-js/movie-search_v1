@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 
 const key = process.env.REACT_APP_KEY
-console.log(key)
 
 export function useMovies(query) {
   
