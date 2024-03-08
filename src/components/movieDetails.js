@@ -9,7 +9,7 @@ export function MovieDetails({
   onAddWatched,
   watched,
 }) {
-  const KEY = "964c9808";
+  const KEY = process.env.REACT_APP_KEY
 
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -83,7 +83,7 @@ export function MovieDetails({
       async function getMovieDetails() {
         setIsLoading(true);
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`
+          `https://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`
         );
         const data = await res.json();
         setMovie(data);
