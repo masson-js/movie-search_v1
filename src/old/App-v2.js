@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import StarRating from "./StarRaiting";
+import StarRating from "../components/module/StarRaiting";
 
 const KEY = "964c9808";
 
