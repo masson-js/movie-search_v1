@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 
-const KEY = "964c9808";
+
+const key = process.env.REACT_APP_KEY
+console.log(key)
 
 export function useMovies(query) {
+  
+
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   useEffect(
     function () {
-      // callback?.()
       const controller = new AbortController();
       async function fetchMovies() {
         try {
           setIsLoading(true);
           setError("");
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+            `http://www.omdbapi.com/?apikey=${key}&s=${query}`,
             { signal: controller.signal }
           );
 
